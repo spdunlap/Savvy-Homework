@@ -6,7 +6,7 @@ let total = 0;
 // write a while loop that sums the numbers from 1 to 100
 
 while (x <= 100) {
-  total = total + x; // could also write as total += a
+  total = total + x; // could also write as total += x
   x++;
 }
 console.log(total);
