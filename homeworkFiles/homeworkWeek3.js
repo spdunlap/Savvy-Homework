@@ -10,7 +10,6 @@ let pizzaToppings = [
   " green pepper"
 ];
 
-
 //let b = preparePizza();
 //let c = servePizza();
 
@@ -27,12 +26,15 @@ function greetCustomer() {
 // - has the parameters size, crust, and an indefinite amount of toppings as inputs
 // - prints the order, i.e. "One large thick crust pizza with x, y, z, ... coming up!"
 // - outputs a list with the size, crust, and toppings
+
+let order = [];
+
 function getPizzaOrder(size, crust, ...pizzaToppings) {
   console.log(
     `One ${size} ${crust} pizza pie with ${pizzaToppings} headed to the oven!`
   );
-  //console.log([size, crust, [...pizzaToppings]]);
-  let order = [size, crust, [...pizzaToppings]];
+  order.push(size, crust, [...pizzaToppings]);
+  // console.log("this is the order", order);
   return order;
 }
 
@@ -41,17 +43,19 @@ function getPizzaOrder(size, crust, ...pizzaToppings) {
 // - prints something like "...Cooking pizza..."
 // - outputs a pizza Object with appropriate key-value pairs for size, crust, and toppings
 
+let object = {};
+
 function preparePizza(order) {
   console.log("Thatsa one hot-n-tasty pizza pie baking up!");
-  let object = {
+  object = {
     orderNumber: "451",
-    size: "small",
-    crust: ${order[1]},
-    toppings: getPizzaOrder.pizzaToppings
+    size: order[0],
+    crust: order[1],
+    toppings: order[2]
   };
+  //console.log("object", object);
   return object;
 }
-//console.log(b);
 
 // 5. Create a servePizza function that
 // - has a parameter of a pizza Object
@@ -59,19 +63,23 @@ function preparePizza(order) {
 // - outputs the same pizza Object that was passed in
 
 function servePizza(pizzaOrder) {
+  // finalOrder = {
+  //   size: pizzaOrder.size,
+  //   crust: pizzaOrder.crust,
+  //   toppings: pizzaOrder.toppings
+  // }
   console.log(
     `Hot-n-tasty pizza pie ready for consumption! This ${pizzaOrder.size} ${pizzaOrder.crust} tasty pie's got ${pizzaOrder.toppings}. Enjoy!`
   );
-  return pizzaOrder;
+  console.log(pizzaOrder);
+  //return pizzaOrder;
 }
-//console.log(c)
 
 // 6. Call each function and (starting with preparePizza) use the returned value from the previous function as its input
 greetCustomer();
 getPizzaOrder("small", "Chicago Style", "cheese", " pepperoni");
-let a = getPizzaOrder();
-preparePizza(a);
-servePizza();
+preparePizza(order);
+servePizza(object);
 
 // 7. Add, commit, and push your JS file to your GitHub repo.
 
