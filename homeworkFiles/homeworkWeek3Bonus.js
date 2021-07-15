@@ -28,14 +28,16 @@ function greetCustomer() {
 // - prints the order, i.e. "One large thick crust pizza with x, y, z, ... coming up!"
 // - outputs a list with the size, crust, and toppings
 
+//pizzaToppings.length === 0
+
 let order = [];
 
 function getPizzaOrder(size, crust, ...pizzaToppings) {
   let lastSelectedTopping = pizzaToppings.pop();
   let selection = pizzaToppings;
-  if (typeof selection === "string") {
-    console.log(`One ${size} ${crust} pizza pie headed to the oven!`);
-  } else if (typeof selection !== "string") {
+  if (typeof selection !== "string") {
+    console.log(`One ${size} ${crust} cheese pizza pie headed to the oven!`);
+  } else if (typeof selection === "string") {
     console.log(
       `One ${size} ${crust} with ${pizzaToppings} and ${lastSelectedTopping} headed to the oven!`
     );
