@@ -91,7 +91,7 @@ function servePizza(pizzaOrder) {
 
 // 6. Call each function and (starting with preparePizza) use the returned value from the previous function as its input
 greetCustomer();
-getPizzaOrder("small", "Chicago Style");
+getPizzaOrder("small", "Chicago Style", "Cheese", "Pepperoni");
 preparePizza(order);
 servePizza(object);
 
