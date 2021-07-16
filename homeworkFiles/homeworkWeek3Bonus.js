@@ -34,10 +34,10 @@ let order = [];
 
 function getPizzaOrder(size, crust, ...pizzaToppings) {
   let lastSelectedTopping = pizzaToppings.pop();
-  let selection = pizzaToppings;
-  if (typeof selection !== "string") {
+  // let selection = pizzaToppings;
+  if (pizzaToppings.length === 0) {
     console.log(`One ${size} ${crust} cheese pizza pie headed to the oven!`);
-  } else if (typeof selection === "string") {
+  } else {
     console.log(
       `One ${size} ${crust} with ${pizzaToppings} and ${lastSelectedTopping} headed to the oven!`
     );
@@ -91,7 +91,7 @@ function servePizza(pizzaOrder) {
 
 // 6. Call each function and (starting with preparePizza) use the returned value from the previous function as its input
 greetCustomer();
-getPizzaOrder("small", "Chicago Style", "Cheese", "Pepperoni");
+getPizzaOrder("small", "Chicago Style");
 preparePizza(order);
 servePizza(object);
 
