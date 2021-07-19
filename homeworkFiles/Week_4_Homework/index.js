@@ -1,4 +1,5 @@
-document.querySelector("#title").add = "test";
+document.title = "Taste of Malaysia";
+
 document.querySelector("#laksa").src = "images/m_food.JPG";
 
 const unorderedList = document.createElement("ul");
