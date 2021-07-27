@@ -10,16 +10,27 @@ class vehicle {
 }
 
 class usedModel extends vehicle {
-  constructor(make, model, trim, color, year, mileage, title) {
+  constructor(
+    make,
+    model,
+    trim,
+    color,
+    year,
+    mileage,
+    certifiedPreOwned,
+    title
+  ) {
     super(make, model, trim, color, year);
     this.mileage = mileage;
+    this.certifiedPreOwned = certifiedPreOwned;
     this.title = title;
   }
 }
 
 class newModel extends vehicle {
-  constructor(make, model, trim, color, year, incentive) {
+  constructor(make, model, trim, color, year, wait, incentive) {
     super(make, model, trim, color, year);
+    this.wait = wait;
     this.incentive = incentive;
   }
 }
