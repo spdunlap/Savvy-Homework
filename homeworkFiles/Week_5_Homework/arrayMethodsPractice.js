@@ -2180,22 +2180,22 @@ const postData = [
 // console.log(user9);
 
 // then find the number of user 9's incomplete tasks
-// const user9Complete = todo.filter(
-//   task => task.userId === 9 && task.completed === false
-// );
-// console.log(user9Complete);
+const user9Complete = todo.filter(
+  task => task.userId === 9 && task.completed === false
+);
+console.log(user9Complete.length);
 
 // Using the placeholder Post data:
 // create a list of user 5's posts
-const userPosts = postData.filter(user => user.userId === 5);
-console.log(userPosts);
+// const userPosts = postData.filter(user => user.userId === 5);
+// console.log(userPosts);
 
-// then, create a list of title and body pairs
+// // then, create a list of title and body pairs
 
-const titleBodyPair = userPosts.map(user5 => {
-  let title = user5.title;
-  let body = user5.body;
-  return `{title: ${title}, body: ${body}}`;
-});
+// const titleBodyPair = userPosts.map(user5 => {
+//   let title = user5.title;
+//   let body = user5.body;
+//   return `{title: ${title}, body: ${body}}`;
+// });
 
-console.log(titleBodyPair);
+// console.log(titleBodyPair);
