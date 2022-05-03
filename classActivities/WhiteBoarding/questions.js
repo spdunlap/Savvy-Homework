@@ -30,19 +30,33 @@
 
 // Question 5
 
-// Write a function that determines if a string in a palindrome.
+// Write a function that determines if a string is a palindrome.
 // A palindrome is a string that is the same forward and backwards.
 
-function isPalindrome(phrase) {
-  if (phrase === "string" && phrase.reverse === phrase) {
-    console.log("You have a palindrome!");
-  } else {
-    console.log("You have a dud..!");
-  }
-  // console.log(isPalindrome)
+function reverseString(string) {
+  let removeSpace = string.replace(/[^a-zA-Z0-9]/g, "");
+  let stringLowercase = removeSpace.toLowerCase();
+  let splitString = stringLowercase.split("");
+  let reverseArray = splitString.reverse();
+  let joinArray = reverseArray.join("");
+  return joinArray;
 }
 
-isPalindrome("racecar");
+function isPalindrome(phrase) {
+  if (
+    typeof phrase === "string" &&
+    reverseString(phrase) === phrase.replace(/[^a-zA-Z0-9]/g, "").toLowerCase()
+  ) {
+    console.log(`"${[phrase]}", is a palindrome!`);
+  } else {
+    console.log(`"${[phrase]}", is NOT a palindrome ... Try Again!`);
+  }
+}
+
+isPalindrome("Eva, can I see bees in a cave?");
+isPalindrome("ta Ble");
+console.log(reverseString("A new order began a more Roman age bred Rowena"));
+isPalindrome(false);
 
 // Examples:
 // isPalindrome('racecar') // --> true
